@@ -40,9 +40,7 @@
     <body>
     <div class="container">
         
-        <div id="categoria">
-            <!-- CATEGORIA -->
-        </div>
+       
 
         <div id="imagem"></div>
 
@@ -111,8 +109,11 @@
             </div>
         </div>
         <!-- fim modal Bootstrap--> 
+        <div id="categoria">
+            <!-- CATEGORIA -->
+        </div>
 
-        <audio preload src="assets/positive.mp3" id='somAcerto'></audio>
+    <audio preload src="assets/positive.mp3" id='somAcerto'></audio>
     <audio preload src="assets/negative.mp3" id='somErro'></audio>
     <audio preload src="assets/aplausos.mp3" id='somAplausos'></audio>
   
