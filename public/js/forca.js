@@ -6,6 +6,10 @@ let palavraSecretaSorteada;
 let palavras = [];
 let jogoAutomatico = true;
 
+let somErro     = document.querySelector('#somErro');
+let somAplausos = document.querySelector('#somAplausos');
+
+
 carregaListaAutomatica();
 
 criarPalavraSecreta();
@@ -81,6 +85,7 @@ function comparalistas(letra){
         carregaImagemForca();
     
         if(tentativas == 0){
+            //somErro.play();
             abreModal("Fim das tentativas!", "Faça outra tentativa. A palavra secreta era <br>" + palavraSecretaSorteada);
             piscarBotaoJogarNovamente(true);
         }
@@ -103,6 +108,7 @@ function comparalistas(letra){
 
     if(vitoria == true)
     {
+        //somAplausos.play();
         abreModal("PARABÉNS, você acertou!");
         tentativas = 0;
         piscarBotaoJogarNovamente(true);
