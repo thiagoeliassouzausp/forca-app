@@ -6,6 +6,8 @@ let palavraSecretaSorteada;
 let palavras = [];
 let jogoAutomatico = true;
 
+// AUDIO
+let somAcerto   = document.querySelector('#somAcerto');
 let somErro     = document.querySelector('#somErro');
 let somAplausos = document.querySelector('#somAplausos');
 
@@ -24,6 +26,7 @@ function criarPalavraSecreta(){
 
 montarPalavraNaTela();
 function montarPalavraNaTela(){
+    
     const categoria = document.getElementById("categoria");
     categoria.innerHTML = palavraSecretaCategoria;
 
@@ -54,6 +57,8 @@ function montarPalavraNaTela(){
 }
 
 function verificaLetraEscolhida(letra){
+
+
     document.getElementById("tecla-" + letra).disabled = true;
     if(tentativas > 0)
     {
@@ -83,14 +88,15 @@ function comparalistas(letra){
     if(pos < 0){
         tentativas--
         carregaImagemForca();
+        somErro.play();
     
         if(tentativas == 0){
-            //somErro.play();
             abreModal("Fim das tentativas!", "Faça outra tentativa. A palavra secreta era <br>" + palavraSecretaSorteada);
             piscarBotaoJogarNovamente(true);
         }
     }
     else{
+        somAcerto.play();
         mudarStyleLetra("tecla-" + letra, true);
         for(i = 0; i < palavraSecretaSorteada.length; i++){
             if(palavraSecretaSorteada[i] == letra){
@@ -108,10 +114,10 @@ function comparalistas(letra){
 
     if(vitoria == true)
     {
-        //somAplausos.play();
-        abreModal("PARABÉNS, você acertou!");
+        somAplausos.play();
+        abreModal("PARABÉNS, você acertou!", "PARABÉNS, você acertou!");
         tentativas = 0;
-        piscarBotaoJogarNovamente(true);
+        //piscarBotaoJogarNovamente(true);
     }
 }
 
