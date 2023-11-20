@@ -12,8 +12,7 @@
         </script>
         
         <meta charset="utf-8">
-        
-        <meta name="description" content="Jogo da Forca online">"
+        <meta name="description" content="Jogo da Forca online">
         <title>Jogo da Forca</title>
 
 
@@ -37,10 +36,18 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
         <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
-        <link rel = "shortcut icon" type = "imagem/x-icon" href = "/favicon.png"/>
+        <link rel = "shortcut icon" type = "imagem/x-icon" href = "/assets/favicon.png"/>
 
     </head>
     <body>
+        <div class="menu">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                    <a class="nav-link active" aria-current="page" href="http://www.pergunteai.com.br">Pergunte Ai</a>
+                    <a class="nav-link active" aria-current="page" href="http://www.jogodasformulas.com.br">Jogo das Fórmulas</a>
+            </nav>
+        </div>
+
     <div class="container">
         
        
@@ -106,7 +113,7 @@
                 </div>
                 <div class="modal-body" id="modalBody"></div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                <button type="button" onClick="window.location.reload();" class="btn btn-primary" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
             </div>
